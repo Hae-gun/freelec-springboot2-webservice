@@ -1,4 +1,16 @@
 # Project exclude paths
-.gradle
-.idea
-application-oauth.properties
+#.gradle
+#.idea
+#application-oauth.properties
+#build/classes/java/main/com/jojoldo/admin/springboot/web/dto/PostsListResponseDto.class
+#build/generated/
+#build/reports/tests/test/classes/
+#build/resources/main/static/
+#build/resources/main/templates/posts-update.mustache
+#build/test-results/test/TEST-com.jojoldo.admin.springboot.web.PostsApiControllerTest.xml
+#build/tmp/
+main/src/
+#src/main/java/com/jojoldo/admin/springboot/web/dto/PostsListResponseDto.java
+#src/main/resources/static/
+#src/main/resources/templates/posts-update.mustache
+#src/test/resources/

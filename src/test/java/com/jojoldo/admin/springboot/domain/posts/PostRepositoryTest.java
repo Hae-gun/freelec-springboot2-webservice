@@ -25,47 +25,47 @@ public class PostRepositoryTest {
         postsRepository.deleteAll();
     }
 
-    @Test
-    public void 게시글저장_불러오기(){
-        //given
-        String title = "테스트 게시글";
-        String content = "테스트 몬분";
-
-        postsRepository.save(Posts.builder()
-                                .title(title)
-                                .content(content)
-                                .author("jojoldu@gmail.com")
-                                .build());
-        //when
-        List<Posts> postsList = postsRepository.findAll();
-
-        //then
-        Posts posts = postsList.get(0);
-        assertThat(posts.getTitle()).isEqualTo(title);
-        assertThat(posts.getContent()).isEqualTo(content);
-    }
-
-    @Test
-    public void BaseTimeEntity_목록(){
-        //given
-        LocalDateTime now = LocalDateTime.of(2020,8,22,0,0,0);
-        postsRepository.save(Posts.builder()
-                                .title("title")
-                                .content("content")
-                                .author("author").build());
-
-        //when
-        List<Posts> postsList= postsRepository.findAll();
-
-        //then
-        Posts posts = postsList.get(0);
-
-        System.out.println(">>>>>>>>>>>>>> createDate="+posts.getCreatedDate()+", modifiedDate="+
-                posts.getModifiedDate());
-
-        assertThat(posts.getCreatedDate()).isAfter(now);
-        assertThat(posts.getModifiedDate()).isAfter(now);
-
-    }
+//    @Test
+//    public void 게시글저장_불러오기(){
+//        //given
+//        String title = "테스트 게시글";
+//        String content = "테스트 몬분";
+//
+//        postsRepository.save(Posts.builder()
+//                                .title(title)
+//                                .content(content)
+//                                .author("jojoldu@gmail.com")
+//                                .build());
+//        //when
+//        List<Posts> postsList = postsRepository.findAll();
+//
+//        //then
+//        Posts posts = postsList.get(0);
+//        assertThat(posts.getTitle()).isEqualTo(title);
+//        assertThat(posts.getContent()).isEqualTo(content);
+//    }
+//
+//    @Test
+//    public void BaseTimeEntity_목록(){
+//        //given
+//        LocalDateTime now = LocalDateTime.of(2020,8,22,0,0,0);
+//        postsRepository.save(Posts.builder()
+//                                .title("title")
+//                                .content("content")
+//                                .author("author").build());
+//
+//        //when
+//        List<Posts> postsList= postsRepository.findAll();
+//
+//        //then
+//        Posts posts = postsList.get(0);
+//
+//        System.out.println(">>>>>>>>>>>>>> createDate="+posts.getCreatedDate()+", modifiedDate="+
+//                posts.getModifiedDate());
+//
+//        assertThat(posts.getCreatedDate()).isAfter(now);
+//        assertThat(posts.getModifiedDate()).isAfter(now);
+//
+//    }
 
 }

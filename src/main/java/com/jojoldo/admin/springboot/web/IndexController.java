@@ -43,4 +43,9 @@ public class IndexController {
         return "posts-update";
     }
 
+    @GetMapping("/test/map")
+    public String mapTest(){
+        return "my-map";
+    }
+
 }
